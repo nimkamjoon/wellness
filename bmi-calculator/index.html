@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness calculators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <button class="headerNavButton"><a href="">body-mass index calculator</a></button>
+        <button class="headerNavButton"><a href="">weight loss calculator</a></button>
+        <button class="headerNavButton"><a href="">basal metabolic rate calculator</a></button>
+        <button class="headerNavButton"><a href="">exercise expenditure calculator</a></button>
+    </header>
+    <main class="container">
+        <div class="wrapper">
+            <div class="unitSelectorBox">
+                <form method="post">
+                    <label><input type="radio" name="radio" value="metric" checked>metric</label>
+                    <label><input type="radio" name="radio" value="imperial">imperial</label>
+                </form>
+            </div>
+            <div class="inputBox">
+                <form action="">
+                    <input type="text" name="height" placeholder="height">
+                    <input type="text" name="weight" placeholder="weight">
+                    <input type="submit" value="submit" onclick="showResult(), showStatus()">
+                </form>
+            </div>
+        </div>
+    </main>
+    <section class="resultWrapper">
+        <div class="result">
+            <h1 id="bmiResult">BMI: 5423</h1>
+            <h2 id="weightStatus">(placeholder)</h2>
+        </div>
+    </section>
+    <section class="learnMore">
+        <div class="infoBlock">
+            <h1>Learn more about adult BMI</h1>
+            <p>Body mass index (BMI) is a person’s weight in kilograms divided by the square of height in meters. BMI is an inexpensive and easy screening method for weight category—underweight, healthy weight, overweight, and obesity.</p>
+
+            <p>BMI does not measure body fat directly, but BMI is moderately correlated with more direct measures of body fat. Furthermore, BMI appears to be as strongly correlated with various metabolic and disease outcome as are these more direct measures of body fatness.</p>
+        </div>
+        <div class="infoBlock">
+            <h2>How is BMI used?</h2>
+
+            <p>BMI can be a screening tool, but it does not diagnose the body fatness or health of an individual. To determine if BMI is a health risk, a healthcare provider performs further assessments. Such assessments include skinfold thickness measurements, evaluations of diet, physical activity, and family history.</p>
+        </div>
+        <div class="infoBlock">
+            <h2>What are the BMI trends for adults in the United States?</h2>
+
+            <p>The prevalence of adult BMI greater than or equal to 30 kg/m2 (obese status) has greatly increased since the 1970s. Recently, however, this trend has leveled off, except for older women. Obesity has continued to increase in adult women who are age 60 years and older.</p>
+        </div>
+        <div class="infoBlock">
+            <h2>How is BMI interpreted for adults?</h2>
+
+            <p>For adults 20 years old and older, BMI is interpreted using standard weight status categories. These categories are the same for men and women of all body types and ages.</p>
+
+            <p>The standard weight status categories associated with BMI ranges for adults are shown in the following table.</p>
+
+            <table>
+                <tr>
+                    <th>BMI</th>
+                    <th>Weight Status</th>
+                </tr>
+                <tr>
+                    <td>Below 18.5</td>
+                    <td>Underweight</td>
+                </tr>
+                <tr>
+                    <td>18.5 – 24.9</td>
+                    <td>Normal or Healthy Weight</td>
+                </tr>
+                <tr>
+                    <td>25.0 – 29.9</td>
+                    <td>Overweight</td>
+                </tr>
+                <tr>
+                    <td>30.0 and Above</td>
+                    <td>Obese</td>
+                </tr>
+            </table>
+        </div>
+        <div class="infoBlock">    
+            <h2>Is BMI interpreted the same way for children and teens as it is for adults?</h2>
+
+            <p>BMI is interpreted differently for children and teens, even though it is calculated using the same formula as adult BMI. Children and teen’s BMI need to be age and sex-specific because the amount of body fat changes with age and the amount of body fat differs between girls and boys. The CDC BMI-for-age growth charts take into account these differences and visually show BMI as a percentile ranking. These percentiles were determined using representative data of the U.S. population of 2- to 19-year-olds that was collected in various surveys from 1963-65 to 1988-9411.</p>
+
+            <p>Obesity among 2- to 19-year-olds is defined as a BMI at or above the 95th percentile of children of the same age and sex in this 1963 to 1994 reference population. For example, a 10-year-old boy of average height (56 inches) who weighs 102 pounds would have a BMI of 22.9 kg/m2. This would place the boy in the 95th percentile for BMI – meaning that his BMI is greater than that of 95% of similarly aged boys in this reference population – and he would be considered to have obesity.</p>
+        </div>   
+        <div id="source">
+            <p>Information sourced from <a href="https://www.cdc.gov">https://www.cdc.gov</a></p>
+        </div>
+    </section>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
