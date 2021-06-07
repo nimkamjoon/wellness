@@ -1,39 +1,57 @@
-let height = document.getElementByName('height').value;
-let weight = document.getElementByName('weight').value;
 
 function calculateBMI(height, weight) {
-    let unitType = document.getElementsByName('radio').value;
+    height = document.querySelector('#height').value;
+    weight = document.querySelector('#weight').value;
 
-    if ( unitType === "metric") {
-        let bmi = weight / (height ** 2);
-    }
-    else if (unitType === "imperial") {
-        let bmi = (weight / (height ** 2)) * 703;
-    }
+    let bmi = 0;
 
-    return bmi;
+    bmi = Math.abs((weight / (height ** 2)) * 10000);
+
+    let bmiRounded = bmi.toFixed(1);
+
+    return bmiRounded;
 }
 
-console.log(calculateBMI(157, 80))
 
-let bmi = calculateBMI(height, weight);
+function result() {
+    height = document.querySelector('#height').value;
+    weight = document.querySelector('#weight').value;
+    
+    let bmi = calculateBMI();
 
-function showResult() {
-    document.getElementsById("bmiResult").innerText = "BMI: " + bmi;
+    document.getElementById("bmiResult").innerText = "BMI: " + bmi;
 }
 
-function showStatus() {
+function status() {
+    document.getElementById('weightStatus').style.visibility = "visible";
+
+    let bmi = calculateBMI();
+
     if (bmi < 18.5) {
-        return document.getElementsByName('weightStatus').item = "(underweight)";
+        document.getElementsByClassName('resultWrapper')[0].style.backgroundColor = "#ff7a7a";
+        document.getElementById('weightStatus').style.backgroundColor = "#ff7a7a";
+        document.getElementById('weightStatus').innerText = "(underweight)";
     } 
     else if (bmi >= 18.5 && bmi < 24.9) {
-        return document.getElementsByName('weightStatus').item = "(normal or healthy weight)";
+        document.getElementsByClassName('resultWrapper')[0].style.backgroundColor = "#7aff81";
+        document.getElementById('weightStatus').style.backgroundColor = "#7aff81";
+        document.getElementById('weightStatus').innerText = "(normal or healthy weight)";
     }
     else if (bmi >= 24.9 && bmi < 29.9) {
-        return document.getElementsByName('weightStatus').item = "(overweight)";
+        document.getElementsByClassName('resultWrapper')[0].style.backgroundColor = "#fff67a";
+        document.getElementById('weightStatus').style.backgroundColor = "#fff67a";
+        document.getElementById('weightStatus').innerText = "(overweight)";
     }
     else if (bmi > 30) {
-        return document.getElementsByName('weightStatus').item = "(obese)";
+        document.getElementsByClassName('resultWrapper')[0].style.backgroundColor = "#ff7a7a";
+        document.getElementById('weightStatus').style.backgroundColor = "#ff7a7a";
+        document.getElementById('weightStatus').innerText = "(obese)";
     }
 }
 
+function show() {
+    let show = true;
+
+    show &= result();
+    show &= status();
+}

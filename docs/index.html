@@ -18,25 +18,17 @@
         <button class="headerNavButton"><a href="">exercise expenditure calculator</a></button>
     </header>
     <main class="container">
-        <div class="wrapper">
-            <div class="unitSelectorBox">
-                <form method="post">
-                    <label><input type="radio" name="radio" value="metric" checked>metric</label>
-                    <label><input type="radio" name="radio" value="imperial">imperial</label>
-                </form>
-            </div>
-            <div class="inputBox">
-                <form action="">
-                    <input type="text" name="height" placeholder="height">
-                    <input type="text" name="weight" placeholder="weight">
-                    <input type="submit" value="submit" onclick="showResult(), showStatus()">
-                </form>
-            </div>
+        <div class="inputBox">
+            <form onsubmit='show(); return false'>
+                <input type="text" name="height" id="height" placeholder="height (cm)">
+                <input type="text" name="weight" id="weight" placeholder="weight (kg)">
+                <input type="submit" value="submit" id="submitButton">
+            </form>
         </div>
     </main>
     <section class="resultWrapper">
         <div class="result">
-            <h1 id="bmiResult">BMI: 5423</h1>
+            <h1 id="bmiResult">BMI: 00.0</h1>
             <h2 id="weightStatus">(placeholder)</h2>
         </div>
     </section>
@@ -98,6 +90,6 @@
             <p>Information sourced from <a href="https://www.cdc.gov">https://www.cdc.gov</a></p>
         </div>
     </section>
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
