@@ -42,7 +42,7 @@ function status() {
         document.getElementById('weightStatus').style.backgroundColor = "#fff67a";
         document.getElementById('weightStatus').innerText = "(overweight)";
     }
-    else if (bmi > 30) {
+    else if (bmi >= 30) {
         document.getElementsByClassName('resultWrapper')[0].style.backgroundColor = "#ff7a7a";
         document.getElementById('weightStatus').style.backgroundColor = "#ff7a7a";
         document.getElementById('weightStatus').innerText = "(obese)";
